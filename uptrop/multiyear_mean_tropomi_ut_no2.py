@@ -21,26 +21,26 @@ import numpy as np
 # Season of interest (eventually change to argparse)
 SEAS = "mam"
 # Data product of interest:
-PRODUCT = "fresco-wide"
+PRODUCT = "NO2"
 # Define altitude range:
-ALT_RANGE = '180-450hPa'
+#ALT_RANGE = '180-450hPa'
 # Data directory:
-IODIR = "/home/ucfaea1/python/cloud_slice_pal_no2/Data"
+IODIR = "F:/TROPOMI_V2.4/Data/netCDF"
 # Years of interest:
-YEARS = ['2019', '2020', '2021']
+YEARS = ['2020', '2021']
 # Year range for output:
-YrRange = '2019-2021'
+YrRange = '2020-2021'
 
 # (2) Get files of interest:
-tfile1 = path.join(IODIR, 'tropomi-ut-no2-' + PRODUCT + '-07-1x1-' + SEAS + '-' + YEARS[0] + '-' + ALT_RANGE + '-v2.nc')
+tfile1 = path.join(IODIR, 'S5P_RPRO_L2__' + PRODUCT + '____' + YEARS[0] + '_reduced_wk.nc')
 #tfile1 = glob.glob(tfile_glob_string)
 
-tfile2 = path.join(IODIR, 'tropomi-ut-no2-' + PRODUCT + '-07-1x1-' + SEAS + '-' + YEARS[1] + '-' + ALT_RANGE + '-v2.nc')
+tfile2 = path.join(IODIR, 'S5P_RPRO_L2__' + PRODUCT + '20210101T113936_16685_03_020400_20221105T225407' + SEAS + '-' + YEARS[1] + '-' + ALT_RANGE + '_reduced_wk.nc')
 #tfile2 = glob.glob(tfile_glob_string)
 
-tfile3 = path.join(IODIR, 'tropomi-ut-no2-' + PRODUCT + '-07-1x1-' + SEAS + '-' + YEARS[2] + '-' + ALT_RANGE + '-v2.nc')
+#tfile3 = path.join(IODIR, 'tropomi-ut-no2-' + PRODUCT + '-07-1x1-' + SEAS + '-' + YEARS[2] + '-' + ALT_RANGE + '-v2.nc')
 
-utno2_files = [tfile1, tfile2, tfile3]
+utno2_files = [tfile1, tfile2]
 
 # Get number of files:
 nfiles = len(utno2_files)
