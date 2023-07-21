@@ -1,48 +1,6 @@
 #!/usr/bin/python
 
-'''
-Code to compare TROPOMI and Pandora column NO2 at high altitude
-sites to assess skill of TROPOMI at reproducing Pandora observations
-of free tropospheric NO2.
 
-Code is set up to process Pandora total or tropospheric column NO2
-at the Mauna Loa, Izana, or Altzomoni sites.
-
-.. code-block:: bash
-
-    usage: compare_tropomi_pandora.py [-h] [--trop_dir TROP_DIR]
-                                      [--pan_dir PAN_DIR] [--out_dir OUT_DIR]
-                                      [--no2_col NO2_COL]
-                                      [--cloud_product CLOUD_PRODUCT]
-                                      [--pandora_site PANDORA_SITE]
-                                      [--str_diff_deg STR_DIFF_DEG]
-                                      [--str_diff_min STR_DIFF_MIN]
-                                      [--apply_bias_correction APPLY_BIAS_CORRECTION]
-                                      [--start_date START_DATE]
-                                      [--end_date END_DATE]
-
-    optional arguments:
-      -h, --help            show this help message and exit
-      --trop_dir TROP_DIR
-      --pan_dir PAN_DIR
-      --out_dir OUT_DIR
-      --no2_col NO2_COL     Either Tot or Trop; default is Tot
-      --cloud_product CLOUD_PRODUCT
-                            options are fresco, dlr-ocra; default is fresco
-      --pandora_site PANDORA_SITE
-                            options are izana,mauna_loa,altzomoni; default is
-                            izana
-      --str_diff_deg STR_DIFF_DEG
-                            options are: 03,02,01,005; default is 02
-      --str_diff_min STR_DIFF_MIN
-                            options are: 60,30,15; default is 30
-      --apply_bias_correction APPLY_BIAS_CORRECTION
-      --start_date START_DATE
-                            Start date of processing window (yyyy-mm-dd)
-      --end_date END_DATE   End date of processing window (yyyy-mm-dd)
-
-
-'''
 
 # Import relevant packages:
 import glob
